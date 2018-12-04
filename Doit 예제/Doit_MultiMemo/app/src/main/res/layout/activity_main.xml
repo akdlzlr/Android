@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    tools:context="com.example.student.doit_multimemo.MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/titleLayout"
+        android:layout_alignParentTop="true">
+        <!-- common 패키지 안에 있는 버튼 클래스 가져온 것-->
+        <com.example.student.doit_multimemo.common.TitleBackgroundButton
+            android:id="@+id/titleBackgroundBtn"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_alignParentTop="true"
+            android:text="멀티 메모"
+            android:textSize="18dp"
+            android:textStyle="bold"/>
+    </RelativeLayout>
+    <!-- 메모 리스트가 보일 리스트뷰 정의 -->
+    <ListView
+        android:id="@+id/memoList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/titleLayout"
+        android:layout_above="@+id/buttonLayout">
+    </ListView>
+
+    <LinearLayout
+        android:id="@+id/buttonLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <!-- [새 메모] 버튼 정의 -->
+            <com.example.student.doit_multimemo.common.TitleBitmapButton
+                android:layout_height="48dp"
+                android:layout_width="100dp"
+                android:id="@+id/newMemoBtn"
+                android:text="새 메모"
+                />
+            <!-- [닫기] 버튼 정의 -->
+            <com.example.student.doit_multimemo.common.TitleBitmapButton
+                android:id="@+id/closeBtn"
+                android:layout_width="100dp"
+                android:layout_height="48dp"
+                android:text="닫기"
+                />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

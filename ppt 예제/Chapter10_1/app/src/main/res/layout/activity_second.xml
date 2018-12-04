@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#aaaaff"
+    tools:context="com.example.student.chapter10_1.Second">
+
+    <Button
+        android:id="@+id/Backbtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffaaff"
+        android:text="돌아가기"/>
+    <TextView
+        android:text="두번째 창입니다."
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center"/>
+</LinearLayout>

@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Pet</string>
+    <string name="title">선택을 시작하겠습니까?</string>
+    <string name="Q1">좋아하는 애완동물은?</string>
+</resources>

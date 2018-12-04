@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.student.chapter8_3.MainActivity">
+
+    <Button
+        android:id="@+id/btnR"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="sd카드에서 파일 열기"/>
+
+    <EditText
+        android:id="@+id/et1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:lines="10"/>
+
+</LinearLayout>
