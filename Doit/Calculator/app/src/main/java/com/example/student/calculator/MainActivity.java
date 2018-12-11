@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
             R.id.btn8, R.id.btn9};
     EditText et1;
 
-    Double num1=0.0, num2=.0;
+    Double num1=.0, num2=.0;
     Double result;
     int sel=0;
     @Override
