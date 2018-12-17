@@ -9,17 +9,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MovieListActivity">
+        <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ReservationActivity" />
-        <activity android:name=".LoginActivity" />
+        <activity android:name=".MovieListActivity" />
         <activity android:name=".InfoActivity" />
-        <activity android:name=".BookActivity"></activity>
+        <activity android:name=".BookActivity" />
+        <activity android:name=".ReservationActivity" />
+        <activity android:name=".JoinActivity" />
+        <activity android:name=".SettingActivity"/>
     </application>
 
 </manifest>

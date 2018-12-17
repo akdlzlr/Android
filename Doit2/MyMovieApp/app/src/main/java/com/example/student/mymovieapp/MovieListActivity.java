@@ -1,10 +1,12 @@
 package com.example.student.mymovieapp;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -16,11 +18,14 @@ import java.util.ArrayList;
 public class MovieListActivity extends AppCompatActivity {
 
     final String[] mid = {"블랙팬서", "궁합", "리틀 포레스트", "월요일이 사라졌다"};
+    Button btnSetting;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        btnSetting = (Button)findViewById(R.id.btnSetting);
 
         // 2. 리스트뷰 객체 만들기
         ListView list = (ListView) findViewById(R.id.ListView);
@@ -54,6 +59,14 @@ public class MovieListActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Toast.makeText(getApplicationContext(), "Hi~", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        btnSetting.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MovieListActivity.this, SettingActivity.class);
+                startActivity(intent);
             }
         });
     }
