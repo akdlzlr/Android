@@ -8,6 +8,9 @@ import android.content.IntentFilter;
 import android.media.MediaPlayer;
 import android.os.IBinder;
 import android.util.Log;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 public class MyPlayerService extends Service {
 
@@ -18,8 +21,10 @@ public class MyPlayerService extends Service {
         @Override
         public void onReceive(Context context, Intent intent) {
             String btn = intent.getStringExtra("btn");
+            String time = intent.getStringExtra("time");
 
             Intent intent1 = new Intent("com.example.student.myplayerservice");
+
             if(btn != null) {
                 if(btn.equals("play") || btn.equals("pause")) {
                     if(player.isPlaying()) {
@@ -38,6 +43,17 @@ public class MyPlayerService extends Service {
                         e.printStackTrace();
                     }
                 }
+
+                if(time != null) {
+                    if(time.equals("running_time")) {
+                        if(player.isPlaying() && player != null) {
+                            intent1.putExtra("cur_time", Integer.toString(player.getCurrentPosition()));
+                            intent1.putExtra("full_time", Integer.toString(player.getDuration()));
+                        }
+                        sendBroadcast(intent1);
+                    }
+                }
+
                 // 수행한 상태를 기록한 인텐드를 패키지 내에서
                 // 브로드 캐스팅 한다.
                 sendBroadcast(intent1);
@@ -76,7 +92,7 @@ public class MyPlayerService extends Service {
         // mp3 재생을 위한 MediaPlayer 객체를 생성한다.
         player = new MediaPlayer();
         // 액티비티와 통신을 위한 리시버를 등록한다.
-        registerReceiver(receiver, new IntentFilter("rj.myplayerservice"));
+        registerReceiver(receiver, new IntentFilter("com.example.student.myplayerservice"));
     }
 
     @Override
