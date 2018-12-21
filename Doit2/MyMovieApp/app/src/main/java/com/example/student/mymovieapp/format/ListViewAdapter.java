@@ -50,30 +50,31 @@ public class ListViewAdapter  extends BaseAdapter{
             view = layoutInflater.inflate(item_layout, viewGroup, false);
         }
 
+
         ImageView iv_thumb = (ImageView) view.findViewById(R.id.iv_thumb);
-        iv_thumb.setImageResource(items.get(pos).getId());
+        iv_thumb.setImageBitmap(items.get(pos).getBitmap());
         iv_thumb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast.makeText(context,
-                        items.get(pos).getName()+"를(을) 선택했습니다.",
+                        items.get(pos).getTitle()+"를(을) 선택했습니다.",
                         Toast.LENGTH_SHORT).show();
 
                 Intent intent = new Intent(context, InfoActivity.class);
                 intent.putExtra("movie_index", pos);
-                intent.putExtra("movie_name", items.get(pos).getName());
-                intent.putExtra("movie_date", items.get(pos).getDate());
-                intent.putExtra("movie_id", items.get(pos).getId());
+                intent.putExtra("movie_name", items.get(pos).getTitle());
+                intent.putExtra("movie_date", items.get(pos).getOpenDate());
+                //intent.putExtra("movie_id", items.get(pos).getId());
                 context.startActivity(intent);
             }
         });
 
 
         TextView tv_title = (TextView)view.findViewById(R.id.tv_title);
-        tv_title.setText(items.get(pos).getName());
+        tv_title.setText(items.get(pos).getTitle());
 
         TextView tv_date = (TextView)view.findViewById(R.id.tv_date);
-        tv_date.setText(items.get(pos).getDate());
+        tv_date.setText(items.get(pos).getOpenDate());
 
         return view;
     }
